@@ -67,13 +67,13 @@
   $.extend(SubmenuItem.prototype, Item.prototype, {
     init: function() {
       this.$element.on({
-        click: $.proxy(this, 'click'),
+        mouseover: $.proxy(this, 'mouseover'),
         keydown: $.proxy(this, 'keydown')
       });
 
       this.$main.on('hide.bs.submenu', $.proxy(this, 'hide'));
     },
-    click: function(event) {
+    mouseover: function(event) {
       // Fix a[href="#"]. For community
       event.preventDefault();
 
